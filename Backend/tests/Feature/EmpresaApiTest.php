@@ -18,7 +18,7 @@ test('list companies successfully', function () {
     ]);
 
     $response = $this->withHeader('Authorization', "Bearer $token")
-        ->get('/api/empresas');
+        ->get('/api/allempresas');
 
     $response->assertStatus(200);
 });
@@ -31,7 +31,7 @@ test('search companies by name', function () {
     Empresa::create(['CIF' => 'VOD1234567', 'Nombre' => 'Vodafone', 'Direccion' => 'Av. Test 2', 'Email' => 'vod@test.com', 'N_Tel' => '600000003']);
 
     $response = $this->withHeader('Authorization', "Bearer $token")
-        ->get('/api/empresas?q=Telefonica');
+        ->get('/api/allempresas?q=Telefonica');
 
     $response->assertStatus(200);
 });
@@ -43,7 +43,7 @@ test('search companies by CIF', function () {
     Empresa::create(['CIF' => 'ABC123456', 'Nombre' => 'Empresa A', 'Direccion' => 'Av. CIF', 'Email' => 'ciftest@test.com', 'N_Tel' => '600000004']);
 
     $response = $this->withHeader('Authorization', "Bearer $token")
-        ->get('/api/empresas?q=ABC123456');
+        ->get('/api/allempresas?q=ABC123456');
 
     $response->assertStatus(200);
 });
