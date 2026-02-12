@@ -134,11 +134,11 @@ class GradoController extends Controller {
         // 4. Obtener Alumnos matriculados en ese grado CON PAGINACIÓN
         $alumnosQuery = User::where('tipo', 'alumno')
             ->whereHas('alumno', function ($q) use ($grado) {
-                $q->where('ID_Grado', $grado->id);
+                $q->where('ID_Grado', $grado->id)
+                ->whereHas('estancias');
             })
             ->with('alumno')
             ->orderBy('apellidos', 'asc');
-
         // Aplicar paginación
         $alumnosPaginados = $alumnosQuery->paginate($perPage, ['*'], 'page', $page);
 
