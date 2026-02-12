@@ -1,0 +1,18 @@
+# Node
+frontend/node_modules
+frontend/dist
+frontend/.env
+
+# Laravel
+backend/vendor
+backend/.env
+backend/storage/logs/*
+backend/storage/framework/cache/*
+backend/storage/framework/sessions/*
+
+# General
+.git
+.gitignore
+.DS_Store
+*.md
+README.md
