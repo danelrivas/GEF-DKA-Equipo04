@@ -29,7 +29,7 @@ Durante el desarrollo hemos realizado:
 
 La aplicación es accesible desde la siguiente dirección:
 
-**URL:** http://172.20.228.22:5173
+**URL:** [http://172.20.228.22:5173](http://172.20.228.22:5173)
 
 Credenciales disponibles para la demostración según el rol:
 
