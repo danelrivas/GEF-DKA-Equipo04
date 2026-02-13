@@ -97,6 +97,10 @@ Route::middleware('auth:sanctum')->group(function () {
         // Gestión de instructores y alumnos
         Route::get('/instructores/{id}/alumnos', [AlumnoController::class, 'alumnosDeInstructor']);
         Route::get('/alumno/{id}', [AlumnoController::class, 'getGrado']);
+
+        // Subir archivos CSV y XLSX
+        Route::post('/alumnos/importar', [AlumnoImportController::class, 'importar']);
+        Route::post('/asignaciones/importar', [AsignacionImportController::class, 'importar']);
     });
 
     // ========================================
